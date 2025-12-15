@@ -1,0 +1,43 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:AreaRectanguloApp.ViewModels"
+             x:Class="AreaRectanguloApp.Views.AreaRectanguloAppView"
+             Title="Área Rectángulo App">
+
+       <ContentPage.BindingContext>
+              <viewModel:AreaRectanguloViewModel/>
+       </ContentPage.BindingContext>
+
+       <VerticalStackLayout Padding="30"
+                     Spacing="15">
+              <Label Text="Calculadora"
+                     FontFamily="poppins"
+                     FontAttributes="Bold"
+                     FontSize="24"
+                     HorizontalOptions="Center"/>
+              <Label Text="Área del Rectángulo"
+                     FontFamily="poppins"
+                     FontAttributes="Bold"
+                     FontSize="24"
+                     HorizontalOptions="Center"/>
+
+              <Entry Placeholder="Base"
+                     Keyboard="Numeric"
+                     Text="{Binding BaseRectangulo}"/>
+
+              <Entry Placeholder="Altura"
+                     Keyboard="Numeric"
+                     Text="{Binding Altura}"/>
+
+              <Button Text="Calcular Área"
+                      Command="{Binding CalcularAreaCommand}"
+                      BackgroundColor="#FF17B07D"/>
+
+              <Label Text="{Binding Area, StringFormat='Area Del Rectangulo: {0}'}"
+                     FontSize="20"
+                     FontFamily="poppins"
+                     FontAttributes="Bold"
+                     HorizontalOptions="Center"/>
+       </VerticalStackLayout>
+
+</ContentPage>
